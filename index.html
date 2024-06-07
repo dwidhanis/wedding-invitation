@@ -29,7 +29,7 @@
             <h1>Dhanesa & Rose</h1>
             <p>Akan melangsungkan pernikahan dalam:</p>
             <div class="simply-countdown"></div>
-            <a href="#undangan" class="btn btn-lg mt-4">Lihat Undangan</a>
+            <a href="#undangan" class="btn btn-lg mt-4" onclick="enableScroll()">Lihat Undangan</a>
         </main>
     </section>
 
@@ -323,6 +323,20 @@
       </div>
      </section>
 
+     <!-- RSVP -->
+      <section id="rsvp" class="rsvp">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-8 col-10 text-center">
+              <h2>Konfirmasi Kehadiran</h2>
+              <p>
+                Isi form dibawah ini untuk konfirmasi kehadiran.
+              </p>
+            </div>
+          </div>
+          </div>
+      </section>
+
      <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
@@ -366,6 +380,33 @@
           stickyTop.style.overflow = 'hidden';
           });
         
+     </script>
+
+     <!-- Disable Scroll Hero -->
+     <script>
+      const rootElement = document.querySelector(":root");
+
+      function disableScroll() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+        window.onscroll = function () {
+          window.scrollTo(scrollTop, scrollLeft);
+        }
+
+        rootElement.style.scrollBehavior = 'auto';
+      }
+
+      function enableScroll() {
+        window.onscroll = function() { }
+          rootElement.style.scrollBehavior = 'smooth';
+          localStorage.setItem('opened', 'true');
+       
+      }
+
+      if (!localStorage.getItem('opened')) {
+        disableScroll();
+      }
      </script>
 
   </body>
