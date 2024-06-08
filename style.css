@@ -438,6 +438,10 @@ footer li {
         height: 140px;
     }
 
+    .rsvp form {
+        padding: 0 30px 0 30px;
+    }
+
 }
 
 /* mobile phone */
@@ -469,6 +473,8 @@ footer li {
         top: 30px;
     }
 
-
+    .rsvp form {
+        padding: 0 30px 0 30px;
+    }
 
 }
